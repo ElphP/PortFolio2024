@@ -1,0 +1,573 @@
+@import "_color.scss";
+@import "_mixin.scss";
+@import "_typo.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url();
+}
+
+body {
+    height: 100vh;
+    background-image: url("../img/ImageFond/code1.jpeg");
+    background-size: cover;
+}
+
+.blurBlack {
+    background-color: rgba(3, 0, 39, 0.6);
+    border: 2px solid #fff;
+    border-radius: 20px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.titre {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: #ff532b;
+    padding: 3px 2.5%;
+    animation: slide 1s forwards;
+}
+.titreMov {
+    font-family: brico;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgba(0,0,0,0);
+    background-image: linear-gradient(90deg, #ffec36 0%, #ff532b 100%);
+    background-size: 200% 200%;
+    animation: rotation 7s infinite ease-out
+}
+
+
+@keyframes rotation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@media only screen and (max-width: 1380px) {
+    .titre h1 {
+        font-size: 1.7rem;
+    }
+   
+}
+@keyframes slide {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 20px 20px 20px 0;
+}
+.containerNav {
+    margin-right: 80px;
+    perspective: 800px;
+    width: 50%;
+}
+nav {
+    background-color: rgba(3, 0, 39, 0.6);
+    border: 2px solid #ffec36;
+    border-radius: 10px;
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        li {
+            list-style: none;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: aqua;
+        font-family: changa;
+        font-size: 1.4rem;
+    }
+    li {
+        padding: 10px 4%;
+    }
+}
+
+.burger {
+    display: none;
+}
+.navMob {
+    display: none;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4%;
+    padding-bottom: 30px;
+}
+
+.presentText {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #030027;
+    border: 2px solid #ffec36;
+    padding: 25px;
+    border-radius: 20px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    h2 {
+        font-size: 1.8rem;
+        font-family: changa;
+    }
+    p {
+        font-size: 1.2rem;
+        font-family: oxanium;
+        font-weight: bolder;
+    }
+    .animation {
+        font-size: 1.2rem;
+        font-family: oxanium;
+        width: 250px;
+        color: #030027;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+     @include responsiveWidth(1380px, 90%);
+}
+
+.element::after {
+    content: "";
+    border-left: 0.8rem solid #030027;
+    height: 100%;
+    animation: clign 0.9s infinite;
+}
+@keyframes clign {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#animText3 {
+    padding-left: 8px;
+    text-decoration: none;
+    color: blue;
+}
+
+.secondRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+.realis {
+    opacity: 0;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.realis > img {
+    background-color: #030027;
+    margin: 40px;
+}
+.fenetre {
+    width: 65vw;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 100%;
+    border: 2px solid #ffec36;
+    background-color: rgba(3, 0, 39, 0.7);
+    border-radius: 20px;
+}
+.card {
+    flex-shrink: 0;
+    width: 400px;
+    height: 570px;
+    border: 2px solid #ff532b;
+    background-color: #fff;
+    color: #030027;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 0px;
+    transition: transform 0.8s;
+    img {
+        width: 100%;
+        border: 1px solid #030027;
+    }
+    & h3 {
+        padding: 0 15px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: oxanium;
+    }
+
+    & p {
+        padding: 5px 15px;
+        font-family: oxanium;
+    }
+
+    & .link {
+        display: flex;
+        justify-content: center;
+    }
+    & a {
+        padding: 10px;
+        text-decoration: none;
+        color: $blue;
+        background-color: $blue-black;
+        box-shadow: 5px 5px 5px $blue-black;
+        border: 1px solid $orange;
+        border-radius: 5px;
+        margin: 10px;
+        font-size: 1.3rem;
+        font-family: changa;
+    }
+}
+
+.numero {
+    color: $blue-black;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: brico;
+    align-items: flex-end;
+}
+
+.techno {
+    background-color: rgba($blue-black, 0.8);
+    color: $white;
+    border: 2px solid $yellow;
+    padding: 25px;
+    border-radius: 20px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    @include responsiveWidth(1380px, 90%);
+
+    & h2 {
+        font-size: 2rem;
+        font-family: changa;
+        @include responsive(1180px, 1.6rem);
+    }
+
+    & p {
+        font-size: 1.2rem;
+        font-family: oxanium;
+        font-weight: bolder;
+        @include responsive(1180px, 1rem);
+    }
+
+    & .technos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    & img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.contact {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #030027;
+    border: 2px solid #ffec36;
+    padding: 25px;
+    border-radius: 20px;
+    width: 65%;
+     @include responsiveWidth(1380px, 90%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    h2 {
+        font-size: 1.8rem;
+        font-family: changa;
+    }
+    p {
+        font-size: 1.2rem;
+        font-family: oxanium;
+        font-weight: bolder;
+    }
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#nom,
+#prenom,
+#sujet,
+#email,
+#mess {
+    // min-width: 300px;
+    padding: 10px;
+    background-color: rgba($blue-black, 0.8);
+    color: #ff532b;
+    border-radius: 5px;
+}
+
+#mail input::placeholder,
+textarea::placeholder {
+    color: #ff532b;
+    font-size: 1.2rem;
+    font-family: oxanium;
+}
+
+#subForm {
+    margin: auto;
+
+    width: 180px;
+    font-size: 1.4rem;
+    font-family: changa;
+    border: 1px solid #ff532b;
+    color: #fff;
+    box-shadow: 5px 5px 5px #ff532b;
+    background-color: rgba($blue-black, 0.8);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#subForm:hover  {
+    cursor: pointer;
+}
+
+.idContact {
+    display: flex;
+    #prenom {
+        margin-left: 4px;
+    }
+    #nom {
+        margin-right: 4px;
+    }
+}
+
+.idContact,
+#email,
+#sujet,
+textarea {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-family: changa;
+}
+
+// gestion du responsive (burger etc)
+@media screen and (max-width: 1180px) {
+    .titre h1 {
+        font-size: clamp(1.2rem, 0.9625rem + 1vw, 1.7rem);
+    }
+
+    .presentText h2,
+    .realis h2,
+    .techno h2,
+    .contact h2 {
+        font-size: clamp(1.2rem, 1.0575rem + 0.6vw, 1.5rem);
+    }
+    .presentText p,
+    .card p,
+    .techno p,
+    contact p {
+        font-size: clamp(0.8rem, 0.705rem + 0.4vw, 1rem);
+    }
+
+    .containerNav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: rgba($blue-black, 0.9);
+        margin-right: 50px;
+        border-radius: 5px;
+        border: 1px solid $yellow;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        position: absolute;
+        width: 70%;
+        margin-left: 7.5px;
+        height: 2px;
+        background-color: $yellow;
+    }
+
+    .bar1 {
+        transform: translateY(12px);
+    }
+
+    .bar3 {
+        transform: translateY(-12px);
+    }
+
+    .bar1.active {
+        transform: rotate(45deg);
+    }
+
+    .bar2.active {
+        opacity: 0;
+    }
+
+    .active.bar3 {
+        transform: rotate(-45deg);
+    }
+    .navMob {
+        display: block;
+        position: absolute;
+        width: 70vw;
+        min-width: 200px;
+        background-color: rgba($blue-black, 0.9);
+        border: 2px solid $yellow;
+        top: 0px;
+        z-index: 1;
+        transform: translateX(-100%);
+        transition: all 0.8s;
+    }
+
+    .navMob.active {
+        transform: translateX(0);
+    }
+
+    .navMob ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        & li {
+            list-style: none;
+            height: 60px;
+        }
+        & a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+
+            text-decoration: none;
+            color: $blue;
+            font-family: changa;
+            font-size: 1.4rem;
+        }
+    }
+
+    .realis > img {
+        display: none;
+    }
+
+    .fenetre {
+        width: 90vw;
+        padding: 25px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        border: 2px solid $yellow;
+        background-color: rgba($blue_black, 0.7);
+        border-radius: 20px;
+    }
+
+    .card {
+        width: 280px;
+        height: 570px;
+    }
+
+    .techno img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #mail {
+        width: 100%;
+    }
+
+    #nom,
+    #prenom,
+    #sujet,
+    #email,
+    #mess {
+       
+        width: 96%;
+    }
+
+    .idContact {
+        flex-direction: column;
+        gap: 15px;
+        #prenom {
+            margin-left: 0px;
+        }
+        #nom {
+            margin-right: 0px;
+        }
+    }
+}
+@media screen and (max-width: 580px) {
+    header img {
+        display: none;
+    }
+    .fenetre {
+        width: 95%;
+        flex-direction: column;
+        border: none;
+
+        background-color: transparent;
+    }
+
+    .card {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+        border-color: $yellow;
+    }
+
+    .techno img {
+        width: 100px;
+        height: 100px;
+    }
+   
+
+    .idContact, #email, #sujet, textarea  {
+      width: 100%;
+    }
+}
