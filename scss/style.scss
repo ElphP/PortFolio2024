@@ -10,13 +10,11 @@
 
 body {
     height: 100vh;
-    background-image: url();
-}
 
-body {
-    height: 100vh;
-    background-image: url("../img/ImageFond/code1.jpeg");
+    background-image: url("../img/ImageFond/matrix.jpeg");
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 .blurBlack {
@@ -29,46 +27,45 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 .titre {
     margin-top: 20px;
     margin-left: 20px;
     display: flex;
     align-items: center;
     color: #ff532b;
-    padding: 3px 2.5%;
+    padding: 2vh 2.5vw;
     animation: slide 1s forwards;
 }
+
 .titreMov {
     font-family: brico;
     -webkit-background-clip: text;
     background-clip: text;
-    color: rgba(0,0,0,0);
+    color: rgba(0, 0, 0, 0);
     background-image: linear-gradient(90deg, #ffec36 0%, #ff532b 100%);
     background-size: 200% 200%;
-    animation: rotation 7s infinite ease-out
+    animation: rotation 7s infinite ease-out;
 }
-
 
 @keyframes rotation {
     0% {
-        background-position: 0% 50%
+        background-position: 0% 50%;
     }
 
     50% {
-        background-position: 100% 50%
+        background-position: 100% 50%;
     }
 
     100% {
-        background-position: 0% 50%
+        background-position: 0% 50%;
     }
 }
 
-@media only screen and (max-width: 1380px) {
-    .titre h1 {
-        font-size: 1.7rem;
-    }
-   
+.titre h1 {
+    padding-left: 20px;
 }
+
 @keyframes slide {
     0% {
         transform: translateY(-100%);
@@ -83,7 +80,7 @@ header img {
     height: 120px;
     border-radius: 50%;
     border: 2px solid #fff;
-    margin: 20px 20px 20px 0;
+    // margin: 20px 20px 20px 0;
 }
 .containerNav {
     margin-right: 80px;
@@ -97,9 +94,12 @@ nav {
     ul {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         li {
             list-style: none;
+            width: 33%;
+            text-align: center;
         }
     }
     a {
@@ -111,6 +111,9 @@ nav {
     li {
         padding: 10px 4%;
     }
+    hr {
+        border: 1px solid #ffec36;
+    }
 }
 
 .burger {
@@ -121,13 +124,17 @@ nav {
 }
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 4%;
-    padding-bottom: 30px;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    flex: 1;
+    overflow: hidden;
 }
 
 .presentText {
+    // flex-grow: 1;
     background-color: rgba(255, 255, 255, 0.9);
     color: #030027;
     border: 2px solid #ffec36;
@@ -138,12 +145,14 @@ main {
     flex-direction: column;
     align-items: center;
     opacity: 0;
+
+    overflow: auto;
+
     h2 {
-        font-size: 1.8rem;
         font-family: changa;
+        width: 250px;
     }
     p {
-        font-size: 1.2rem;
         font-family: oxanium;
         font-weight: bolder;
     }
@@ -151,13 +160,15 @@ main {
         font-size: 1.2rem;
         font-family: oxanium;
         width: 250px;
+        height: 2.4rem;
         color: #030027;
         display: flex;
         flex-direction: column;
-        padding-top: 40px;
-        padding-bottom: 40px;
+
+        margin-bottom: 10px;
     }
-     @include responsiveWidth(1380px, 90%);
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
 }
 
 .element::after {
@@ -189,43 +200,54 @@ main {
     flex-wrap: wrap;
 }
 .realis {
-    opacity: 0;
+    
+     background-color: rgba($blue-black, 0.8);
+    color: $white;
+    border: 2px solid $yellow;
     padding: 25px;
+    border-radius: 20px;
+    width: 65%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    opacity: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
 }
 .realis > img {
     background-color: #030027;
     margin: 40px;
 }
-.fenetre {
-    width: 65vw;
-    padding: 25px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    gap: 100%;
-    border: 2px solid #ffec36;
-    background-color: rgba(3, 0, 39, 0.7);
-    border-radius: 20px;
-}
-.card {
-    flex-shrink: 0;
-    width: 400px;
-    height: 570px;
-    border: 2px solid #ff532b;
-    background-color: #fff;
-    color: #030027;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px 0px;
-    transition: transform 0.8s;
+
+.realis .card {
+            width: 100%;
+            display: flex;
+            color: #ffec36;
+            text-decoration: none;
+            font-size: 1.6rem;
+            margin: 10px;
+            font-family: changa;
+            padding: 10px;
+            border-radius: 10px;
+            border: solid 1px white;
+
+            
     img {
-        width: 100%;
+        width: 400px;
+        aspect-ratio: auto;
         border: 1px solid #030027;
+        @include responsiveWidth(1260px, 350px);
+        @include responsiveWidth(480px, 300px);
+        @include responsiveWidth(380px, 250px);
+        
+        
+    }
+    .cardText  {
+        display: flex;
+        flex-direction: column;
     }
     & h3 {
         padding: 0 15px;
@@ -235,7 +257,7 @@ main {
     }
 
     & p {
-        padding: 5px 15px;
+        padding: 15px;
         font-family: oxanium;
     }
 
@@ -257,6 +279,7 @@ main {
     }
 }
 
+// numero du projet (à retirer)
 .numero {
     color: $blue-black;
     font-size: 1.8rem;
@@ -266,6 +289,7 @@ main {
 }
 
 .techno {
+    // flex-grow: 1;
     background-color: rgba($blue-black, 0.8);
     color: $white;
     border: 2px solid $yellow;
@@ -276,19 +300,22 @@ main {
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    @include responsiveWidth(1380px, 90%);
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
+    // max-height: 600px;
+    overflow: auto;
 
     & h2 {
-        font-size: 2rem;
+        // font-size: 2rem;
         font-family: changa;
-        @include responsive(1180px, 1.6rem);
+        @include responsive(1260px, 1.6rem);
     }
 
     & p {
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
         font-family: oxanium;
         font-weight: bolder;
-        @include responsive(1180px, 1rem);
+        @include responsive(1260px, 1rem);
     }
 
     & .technos {
@@ -297,27 +324,26 @@ main {
         flex-wrap: wrap;
         gap: 15px;
     }
-
-    & img {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 .contact {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #030027;
+    // flex-grow: 1;
+    overflow: auto;
+    background-color: rgba($blue-black, 0.8);
+    color: #ff532b;
     border: 2px solid #ffec36;
     padding: 25px;
     border-radius: 20px;
     width: 65%;
-     @include responsiveWidth(1380px, 90%);
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     opacity: 0;
+
     h2 {
-        font-size: 1.8rem;
+        // font-size: 1.8rem;
         font-family: changa;
     }
     p {
@@ -337,15 +363,15 @@ main {
 #email,
 #mess {
     // min-width: 300px;
-    padding: 10px;
-    background-color: rgba($blue-black, 0.8);
+    padding: 8px;
+    background-color: white;
     color: #ff532b;
     border-radius: 5px;
 }
 
 #mail input::placeholder,
 textarea::placeholder {
-    color: #ff532b;
+    color: rgba(3, 0, 39, 0.7);
     font-size: 1.2rem;
     font-family: oxanium;
 }
@@ -364,7 +390,7 @@ textarea::placeholder {
     padding: 10px;
 }
 
-#subForm:hover  {
+#subForm:hover {
     cursor: pointer;
 }
 
@@ -391,7 +417,7 @@ textarea {
 }
 
 // gestion du responsive (burger etc)
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1260px) {
     .titre h1 {
         font-size: clamp(1.2rem, 0.9625rem + 1vw, 1.7rem);
     }
@@ -403,10 +429,10 @@ textarea {
         font-size: clamp(1.2rem, 1.0575rem + 0.6vw, 1.5rem);
     }
     .presentText p,
-    .card p,
+    .realis p,
     .techno p,
-    contact p {
-        font-size: clamp(0.8rem, 0.705rem + 0.4vw, 1rem);
+    .contact p {
+        font-size: clamp(1rem, 0.82rem + 0.6vw, 1.3rem);
     }
 
     .containerNav {
@@ -508,10 +534,7 @@ textarea {
         border-radius: 20px;
     }
 
-    .card {
-        width: 280px;
-        height: 570px;
-    }
+    
 
     .techno img {
         width: 120px;
@@ -527,7 +550,6 @@ textarea {
     #sujet,
     #email,
     #mess {
-       
         width: 96%;
     }
 
@@ -542,6 +564,7 @@ textarea {
         }
     }
 }
+
 @media screen and (max-width: 580px) {
     header img {
         display: none;
@@ -565,9 +588,259 @@ textarea {
         width: 100px;
         height: 100px;
     }
-   
 
-    .idContact, #email, #sujet, textarea  {
-      width: 100%;
+    .idContact,
+    #email,
+    #sujet,
+    textarea {
+        width: 100%;
     }
+}
+
+.jeux {
+    background-color: rgba($blue-black, 0.8);
+    color: $white;
+    border: 2px solid $yellow;
+    padding: 25px;
+    border-radius: 20px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    overflow: auto;
+
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
+    //    max-height: 600px;
+
+    h2 {
+        font-family: changa;
+    }
+
+    .gameCard {
+        a {
+            width: 600px;
+            display: flex;
+            color: #ffec36;
+            text-decoration: none;
+            font-size: 1.6rem;
+            margin: 10px;
+            font-family: changa;
+            padding: 10px;
+            border-radius: 10px;
+            border: solid 1px white;
+        }
+        img {
+            width: 180px;
+            height: 180px;
+        }
+        p {
+            margin-left: 30px;
+            padding: 5px;
+        }
+    }
+}
+
+.github {
+    background-color: rgba($blue-black, 0.8);
+    color: $white;
+    border: 2px solid $yellow;
+    padding: 25px;
+    border-radius: 20px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include responsiveWidth(1260px, 90%);
+    @include responsiveWidth(400px, 100%);
+
+    .profil {
+        text-align: end;
+        width: 100%;
+        margin-right: 50px;
+
+        a {
+            font-size: clamp(1.7rem, 0.75vw + 0.815rem, 2rem);
+            font-family: changa;
+            cursor: grab;
+            color: #ff532b;
+            text-decoration: none;
+        }
+        &a:active {
+            cursor: grabbing;
+        }
+    }
+}
+
+// présentation mini-jeux
+@media screen and (max-width: 780px) {
+    .jeux .gameCard a {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        width: 300px;
+    }
+    .contain1 {
+        flex-direction: column;
+    }
+    .realis .card  {
+        flex-direction: column;
+        
+        align-items: center;
+        &img {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+/* Personnalisation de la scrollbar  */
+.jeux,
+.techno,
+.contact,
+.github, .realis {
+    &::-webkit-scrollbar {
+        width: 17px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    /* Piste de défilement (track) */
+    &::-webkit-scrollbar-track {
+        margin-block: 15px;
+        border-radius: 10px;
+        background: transparent;
+    }
+
+    /* Poignée de défilement (thumb) */
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #ff532b;
+
+        border: solid 5px #030027;
+    }
+
+    /* Poignée au survol */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #009c9c;
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    .titre h1 {
+        font-size: clamp(1.7rem, 0.75vw + 0.815rem, 2rem);
+    }
+
+    nav a {
+        font-size: clamp(1.1rem, 0.1923rem + 1.2308vw, 1.3rem);
+    }
+
+    .jeux a {
+        font-size: clamp(1.4rem, 0.22rem + 1.6vw, 1.8rem);
+    }
+
+    header img {
+        width: clamp(100px, 10vw, 140px);
+        height: auto;
+    }
+
+    .techno img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .titre {
+        margin-top: 10px;
+    }
+
+    .jeux .gameCard img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 0.615rem + 1.2vw, 1.8rem);
+    }
+
+    p {
+        font-size: clamp(1.1rem, 0.41rem + 0.8vw, 1.3rem);
+    }
+}
+
+.github {
+    & h2 {
+        font-family: changa;
+        padding: 5px;
+    }
+}
+.contentGH {
+    display: flex;
+    flex-direction: column;
+}
+
+.templateGH {
+    border: 1px solid white;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    font-family: changa;
+
+    .contain1 {
+        display: flex;
+         @include responsiveWidth(400px, 100vw);
+    }
+    .contain2 {
+        display: flex;
+         @include responsiveWidth(400px, 100vw);
+        p {
+            padding: 10px 20px;
+        }
+    }
+    img {
+        width: 350px;
+        height: auto;
+        padding: 5px;
+    }
+    .dataGH {
+        padding-left: 10px;
+    }
+    .donnee {
+        color: #ffec36;
+    }
+    .lien a {
+        text-decoration: none;
+        color: #ff532b;
+    }
+}
+
+// loader style
+.loader {
+    border: 8px solid #f3f3f3; /* Couleur de fond */
+    border-top: 8px solid #3498db; /* Couleur de la bordure animée */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -1,4 +1,11 @@
-<?php include("form_php.php");
+<?php
+
+
+
+
+include("form_php.php");
+include("loadEnv.php");
+include("curl.php");
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +31,19 @@
                     <a href="#" id="lien1">Accueil</a>
                 </li>
                 <li>
-                    <a href="#" id="lien2">Réalisations</a>
-                </li>
-                <li>
                     <a href="#" id="lien3">Technos abordées</a>
                 </li>
                 <li>
                     <a href="#" id="lien4">Contact</a>
+                </li>
+                <li>
+                    <a href="#" id="lien2">Sites publiés</a>
+                </li>
+                <li>
+                    <a href="#" id="lien5">Dépôts GitHub</a>
+                </li>
+                <li>
+                    <a href="#" id="lien6">Mini-jeux</a>
                 </li>
             </ul>
         </div>
@@ -48,9 +61,7 @@
                     <li>
                         <a href="#" id="lien1">Accueil</a>
                     </li>
-                    <li>
-                        <a href="#" id="lien2">Réalisations</a>
-                    </li>
+
                     <li>
                         <a href="#" id="lien3">Technos abordées</a>
                     </li>
@@ -58,6 +69,20 @@
                         <a href="#" id="lien4">Contact</a>
                     </li>
                 </ul>
+                <hr>
+                <ul>
+                    <li>
+                        <a href="#" id="lien2">Sites publiés</a>
+                    </li>
+                    <li>
+                        <a href="#" id="lien5">Dépôts GitHub</a>
+                    </li>
+                    <li>
+                        <a href="#" id="lien6">Mini-jeux</a>
+                    </li>
+                </ul>
+
+
             </nav>
         </div>
         <button class="burger">
@@ -106,43 +131,48 @@
             </p>
         </section>
         <section class="realis">
-            <img src="./img/icones/square-caret-left-solid.svg" alt="button_left" />
-            <div class="fenetre">
-                <div class="card">
-                    <img src="./img/eneaTelecom.png" alt="image_eneaTelecom" />
+
+            <div class="card">
+
+                <img src="./img/eneaTelecom.png" alt="image_eneaTelecom" />
+
+                <div class="cardText">
                     <h3>Site Enea Telecom</h3>
                     <p class="presentation">
-                        J'ai développé et mis en production (de A à Z) un
-                        site pour une société de Telecommuncation active sur
+                        J'ai développé et mis en production (de A à Z) ce
+                        site vitrine pour une société de Telecommunication active sur
                         le continent africain afin de leur donner une
                         présence sur le Web.
                     </p>
                     <div class="link">
                         <a href="https://eneatelecom.com/" target="_blank" rel="noopener noreferrer">Visiter</a>
                     </div>
-                    <div class="numero">1/5</div>
                 </div>
-                <div class="card">
-                    <img src="./img/maFormationAFPA.jpg" alt="image_maformationAFPA" />
+
+
+            </div>
+            <div class="card">
+                <img src="./img/maFormationAFPA.jpg" alt="image_maformationAFPA" />
+                <div class="cardText">
                     <h3>MaFormationAFPA</h3>
                     <p class="presentation">
-                        Sur ce site, vous découvrirez (presque)
-                        l'intégralité de mes réalisations en programmation à
-                        Istres (et à la maison) entre octobre 2023 et mars
-                        2024. Il s'agit d'un parcours au sein de ma
-                        production, conçu dans une perspective (un peu)
-                        pédagogique...
+                        Bienvenue sur ce site ! Ici, vous pourrez découvrir une sélection de mes projets de
+                        programmation réalisés entre octobre 2023 et mars 2024, à la fois à Istres et à domicile. Ce
+                        portfolio reflète une partie de mon parcours et mes compétences, avec une approche légèrement
+                        pédagogique pour
+                        partager mes apprentissages et mes expériences tout au long de ce cheminement.
                     </p>
                     <div class="link">
-                        <a href="https://github.com/ElphP/site_MaFormationAFPA" target="_blank"
-                            rel="noopener noreferrer">Code / GitHub</a>
+
                         <a href="https://betadev.elphegeproisy.com/Site_MaFormAFPA/" target="_blank"
                             rel="noopener noreferrer">Visiter</a>
                     </div>
-                    <div class="numero">2/5</div>
                 </div>
-                <div class="card">
-                    <img src="./img//eppublications.jpg" alt="image_maformationAFPA" />
+
+            </div>
+            <div class="card">
+                <img src="./img//eppublications.jpg" alt="image_maformationAFPA" />
+                <div class="cardText">
                     <h3>Mon site perso WordPress</h3>
                     <p class="presentation">
                         Ce site que j'ai créé sous WordPress en 2020 a été le déclic qui m'a ramené au développement
@@ -151,46 +181,18 @@
                         le monde du développement Web avec une nouvelle perspective et pleins d'envies pour l'avenir...
                     </p>
                     <div class="link">
-
                         <a href="https://elphegeproisy.com/" target="_blank" rel="noopener noreferrer">Visiter</a>
                     </div>
-                    <div class="numero">3/5</div>
                 </div>
-                <div class="card">
-                    <img src="./img/pwdInterface.png" alt="interface_passwordd_PHP" />
-                    <h3>Interface Password</h3>
-                    <p class="presentation">
-                        Il s'agit ici d'une interface codée en PHP pour simuler l'accès à un site fictif.
-                        <br>
-                        Mots de passe possibles pour l'essayer: <br> id: AMELIE mdp: c18A2ePt <br> id: LAURENT mdp:
-                        n2Felg83
-                    </p>
-                    <div class="link">
-                        <a href="https://github.com/ElphP/siteFICTIF" target="_blank" rel="noopener noreferrer">Code /
-                            GitHub</a>
-                        <a href="https://betadev.elphegeproisy.com/RP1" target="_blank"
-                            rel="noopener noreferrer">Visiter</a>
-                    </div>
-                    <div class="numero">4/5</div>
-                </div>
-                <div class="card">
-                    <img src="./img/testTabl.png" alt="img_jeuMultiplications" />
-                    <h3>Tables Multiplications</h3>
-                    <p class="presentation">
-                        Voilà un petit test que j'avais codé en JavasCript pour tester ses connaissances sur les tables
-                        de multiplications... (code que j'avais créé à l'origine pour mon fils)
-                    </p>
-                    <div class="link">
-                        <a href="https://github.com/ElphP/TestTableMultipl" target="_blank"
-                            rel="noopener noreferrer">Code / GitHub</a>
-                        <a href="https://betadev.elphegeproisy.com/TestTabl" target="_blank"
-                            rel="noopener noreferrer">Se tester</a>
-                    </div>
-                    <div class="numero">5/5</div>
-                </div>
+
             </div>
 
-            <img src="./img/icones/square-caret-right-solid.svg" alt="button_right" />
+
+
+            </div>
+
+
+
         </section>
         <section class="techno">
             <h2>Les technos que j'ai déjà pratiqué...</h2>
@@ -220,6 +222,10 @@
                     <img src="./img/icones/jquery.jpg" alt="icones_technos" />
                 </div>
                 <div class="item">
+                    <p>Wordpress</p>
+                    <img src="./img/icones/wordpress.jpg" alt="icones_technos" />
+                </div>
+                <div class="item">
                     <p>PHP</p>
                     <img src="./img/icones/php.jpg" alt="icones_technos" />
                 </div>
@@ -228,26 +234,34 @@
                     <img src="./img/icones/mysql.jpg" alt="icones_technos" />
                 </div>
                 <div class="item">
-                    <p>Java</p>
-                    <img src="./img/icones/java.jpg" alt="icones_technos" />
+                    <p>Laravel</p>
+                    <img src="./img/icones/laravel.jpg" alt="icones_technos" />
                 </div>
                 <div class="item">
-                    <p>Wordpress</p>
-                    <img src="./img/icones/wordpress.jpg" alt="icones_technos" />
+                    <p>Symfony</p>
+                    <img src="./img/icones/symfony.png" alt="icones_technos" />
                 </div>
                 <div class="item">
                     <p>Postman</p>
                     <img src="./img/icones/postman.jpg" alt="icones_technos" />
                 </div>
                 <div class="item">
-                    <p>Laravel</p>
-                    <img src="./img/icones/laravel.jpg" alt="icones_technos" />
-                </div>
-                <div class="item">
-                    <p>Smarty/Prestashop</p>
+                    <p>Smarty (PS)</p>
                     <img src="./img/icones/smarty.jpg" alt="icones_technos" />
                 </div>
-            </div>
+                <div class="item">
+                    <p>Java (nv1)</p>
+                    <img src="./img/icones/java.jpg" alt="icones_technos" />
+                </div>
+                <div class="item">
+                    <p>Docker (nv1)</p>
+                    <img src="./img/icones/docker.png" alt="icones_technos" />
+                </div>
+                <div class="item">
+                    <p>Linux (nv1)</p>
+                    <img src="./img/icones/linux.png" alt="icones_technos" />
+                </div>
+
         </section>
         <section class="contact">
 
@@ -282,6 +296,60 @@
                 </form>
             </div>
         </section>
+
+        <section class="github">
+            <div class="profil">
+                <a href="https://github.com/ElphP" target="_blank" rel="noopener noreferrer">Mon profil GitHub</a>
+            </div>
+            <h2>Dépôts GitHub</h2>
+
+            <div id="loading" class="loading-container">
+                <div class="loader"></div>
+            </div>
+
+            <div id="contentGH"></div>
+        </section>
+
+        <section class="jeux">
+            <h2>Les mini-jeux</h2>
+            <div class="gameCard">
+                <a href="https://betadev.elphegeproisy.com/Site_MaFormAFPA/ExJS/Chap3/Pendu/index.html" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="./img/icones/pendu.jpg" alt="LeJeuDuPendu">
+                    <p>Le jeu du pendu <br> (version simple)</p>
+
+                </a>
+            </div>
+            <div class="gameCard">
+                <a href="https://betadev.elphegeproisy.com/TestTabl/" target="_blank" rel="noopener noreferrer">
+                    <img src="./img/icones/multiplications.jpg" alt="LeJeuDesMultiplications">
+                    <p>Teste tes tables <br> de mulitplications!</p>
+                </a>
+            </div>
+            <div class="gameCard">
+                <a href="https://betadev.elphegeproisy.com/Site_MaFormAFPA/ExJS/Jeu_memory/index.html" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="./img/icones/memory.jpg" alt="Memory">
+                    <p>Le jeu "Memory"</p>
+                </a>
+            </div>
+            <div class="gameCard">
+                <a href="https://betadev.elphegeproisy.com/Site_MaFormAFPA/ExJS/Chap3/Mastermind/index.html"
+                    target="_blank" rel="noopener noreferrer">
+                    <img src="./img/icones/mastermind.jpg" alt="MasterMind">
+                    <p>MasterMind! <br> (jeu contre l'ordinateur)</p>
+                </a>
+            </div>
+            <div class="gameCard">
+                <a href="https://betadev.elphegeproisy.com/Site_MaFormAFPA/JeuEchec/Principale.php" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="./img/icones/echec.jpg" alt="JeuEchec">
+                    <p>Jeu d'échec <br>(2 joueurs)</p>
+
+                </a>
+            </div>
+        </section>
+
     </main>
 </body>
 
