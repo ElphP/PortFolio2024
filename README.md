@@ -1,3 +1,4 @@
-Version PortFolio 2024 développée avec du SCSS, du JQuery, et du PHP.
+**Version Portfolio 2024 :** Développée avec SCSS, jQuery et PHP.
 
-MAJ 30/10/2024 Version avec Appel à l'API de GitHub pour mettre automatiquement mon PortFolio à jour! 
+**Mise à jour (30/10/2024) :** Je suis ravi d'annoncer l'ajout d'un appel à l'API de GitHub, qui permet maintenant de mettre à jour automatiquement mon portfolio.  <br>
+Cette fonctionnalité garantit que mes projets sont toujours à jour, offrant ainsi une vue précise de mes réalisations et de mes compétences en programmation.
